@@ -16,7 +16,7 @@ const isProduction = ['producition', 'prod'].includes(process.env.NODE_ENV)
 const paths = {
   src: path.join(__dirname, 'src'),
   dist: path.join(__dirname, 'dist'),
-  copies: ['images'],
+  copies: ['images', 'vendor'],
 }
 
 gulp.task('default', ['build'])
@@ -48,8 +48,8 @@ gulp.task('build:styles', ['clean:styles'], () => pump([
   gulp.dest(paths.dist),
 ]))
 gulp.task('clean:styles', () => del([
-  path.join(paths.dist, '**', '*.min.css'),
-  path.join(paths.dist, '**', '*.min.css.map'),
+  path.join(paths.dist, '*.min.css'),
+  path.join(paths.dist, '*.min.css.map'),
 ]))
 
 
@@ -62,7 +62,7 @@ gulp.task('build:html', ['clean:html'], () => pump([
   htmlmin({ collapseWhitespace: true, removeComments: true }),
   gulp.dest(paths.dist),
 ]))
-gulp.task('clean:html', () => del(path.join(paths.dist, '**', '*.html')))
+gulp.task('clean:html', () => del(path.join(paths.dist, '*.html')))
 
 
 /**
