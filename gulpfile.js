@@ -14,8 +14,8 @@ const pump = require('pump')
 
 const isProduction = ['producition', 'prod'].includes(process.env.NODE_ENV)
 const paths = {
-  src: path.join(__dirname, 'src'),
-  dist: path.join(__dirname, 'dist'),
+  src: 'src',
+  dist: 'dist',
   copies: ['images', 'vendor'],
 }
 
@@ -32,6 +32,7 @@ gulp.task('serve', () => gulp
 gulp.task('watch', ['build'], () => {
   gulp.watch(path.join(paths.src, '**', '*.scss'), ['build:styles'])
   gulp.watch(path.join(paths.src, '**', '*.html'), ['build:html'])
+  gulp.watch(paths.copies.map(copy => path.join(paths.src, copy, '**')), ['build:copies'])
 })
 
 
