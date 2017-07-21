@@ -1,4 +1,97 @@
+$background: #f1f1f1;
+$text-primary: #5b5b5b;
+$text-secondary: #79204b;
+$text-tertiary: #e394bf;
+
+$font-family: Corbel, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", "Bitstream Vera Sans", "Liberation Sans", Verdana, "Verdana Ref", sans-serif;
+
+$screen-min: 360px;
+$screen-wide: 768px;
+$screen-max: 960px;
+$space-normal: 20px;
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-width: $screen-min;
+  height: 100%;
+}
+
 body {
-  background: pink;
-  color: navy;
+  background: $background;
+  color: $text-primary;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: $font-family;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: $text-secondary;
+}
+
+h1:first-child,
+h2:first-child,
+h3:first-child,
+h4:first-child,
+h5:first-child,
+h6:first-child,
+p:first-child {
+  margin-top: 0;
+}
+
+img {
+  max-width: 100%;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: $screen-max;
+  max-width: 100%;
+  margin: $space-normal;
+
+  @media (min-width: $screen-wide) {
+    flex-direction: inherit;
+  }
+}
+
+figure.logo {
+  max-width: 238px;
+  margin: 0 auto;
+
+  figcaption {
+    color: $text-secondary;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 0.8em;
+  }
+}
+
+/* Narrow screen - stacked */
+@media (max-width: $screen-wide - 1) {
+  .first-container {
+    border-bottom: 2px dashed;
+    padding-bottom: $space-normal;
+  }
+  .second-container {
+    padding-top: $space-normal;
+  }
+}
+
+/* Wide screen - side by side */
+@media (min-width: $screen-wide) {
+  .first-container {
+    border-right: 2px dashed;
+    padding-right: $space-normal;
+    width: 260px;
+  }
+  .second-container {
+    padding-left: $space-normal;
+  }
 }
