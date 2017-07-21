@@ -2,13 +2,20 @@
 
 .container {
   display: flex;
-  flex-direction: column;
   width: $screen-max;
   max-width: 100%;
   margin: $space-normal;
 
-  @media (min-width: $screen-wide) {
-    flex-direction: inherit;
+  @media (max-width: $screen-wide - 1) {
+    flex-direction: column;
+  }
+
+  .first-container {
+    flex-shrink: 0;
+  }
+  .second-container {
+    text-align: center;
+    padding: $space-normal * 2;
   }
 }
 
@@ -17,9 +24,6 @@
   .first-container {
     border-bottom: 2px dashed;
     padding-bottom: $space-normal;
-  }
-  .second-container {
-    padding-top: $space-normal;
   }
 }
 
@@ -31,6 +35,6 @@
     width: 260px;
   }
   .second-container {
-    padding-left: $space-normal;
+    padding-right: 0;
   }
 }
