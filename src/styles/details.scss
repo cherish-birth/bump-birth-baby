@@ -1,7 +1,7 @@
 @import "variables";
 
 figure.logo {
-  max-width: 238px;
+  max-width: $details-width;
   margin: 0 auto;
 
   figcaption {
@@ -9,5 +9,14 @@ figure.logo {
     text-transform: uppercase;
     text-align: center;
     font-size: 0.8em;
+  }
+}
+
+.details {
+  max-width: $details-width;
+  margin: 1.5em auto 0;
+
+  > * {
+    margin: 1em 0;
   }
 }

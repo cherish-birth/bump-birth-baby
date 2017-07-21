@@ -1,6 +1,7 @@
 /* Colours */
 $background: #f1f1f1;
 $text-primary: #5b5b5b;
+$text-inverse: #f1f1f1;
 $text-secondary: #79204b;
 $text-tertiary: #e394bf;
 
@@ -14,4 +15,10 @@ $screen-min: 360px;
 $screen-wide: 768px;
 $screen-max: 960px;
 
+$details-width: 238px;
+
 $space-normal: 20px;
+
+
+/* Timings */
+$transition-fast: 0.3s;
