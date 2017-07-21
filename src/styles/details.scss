@@ -1,0 +1,13 @@
+@import "variables";
+
+figure.logo {
+  max-width: 238px;
+  margin: 0 auto;
+
+  figcaption {
+    color: $text-secondary;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 0.8em;
+  }
+}

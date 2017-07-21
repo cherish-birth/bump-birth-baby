@@ -1,0 +1,36 @@
+@import "variables";
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: $screen-max;
+  max-width: 100%;
+  margin: $space-normal;
+
+  @media (min-width: $screen-wide) {
+    flex-direction: inherit;
+  }
+}
+
+/* Narrow screen - stacked */
+@media (max-width: $screen-wide - 1) {
+  .first-container {
+    border-bottom: 2px dashed;
+    padding-bottom: $space-normal;
+  }
+  .second-container {
+    padding-top: $space-normal;
+  }
+}
+
+/* Wide screen - side by side */
+@media (min-width: $screen-wide) {
+  .first-container {
+    border-right: 2px dashed;
+    padding-right: $space-normal;
+    width: 260px;
+  }
+  .second-container {
+    padding-left: $space-normal;
+  }
+}
