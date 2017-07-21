@@ -12,12 +12,15 @@
     "build": "NODE_ENV=production npm-run-all clean gulp",
     "clean": "gulp clean",
     "watch": "gulp watch",
-    "serve": "gulp serve"
+    "serve": "gulp serve",
+    "deploy": "gh-pages -d dist",
+    "predeploy": "npm run build && echo 'bumpbirthandbaby.com.au' > dist/CNAME"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",
     "cssnano": "^3.10.0",
     "del": "^3.0.0",
+    "gh-pages": "^1.0.0",
     "gulp": "^3.9.1",
     "gulp-cache-bust": "^1.1.0",
     "gulp-htmlmin": "^3.0.0",
