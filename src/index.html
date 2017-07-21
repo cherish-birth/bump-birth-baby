@@ -11,7 +11,17 @@
     <!-- Keep 32x32 last for older browsers -->
     <link rel="icon" type="image/png" href="images/favicon-32.png" sizes="32x32">
 
-    <link rel="stylesheet" href="vendor/normalize.min.css">
+    <!-- Vendor styles -->
+    {{#isProduction}}
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    {{/isProduction}}
+    {{^isProduction}}
+      <link rel="stylesheet" href="vendor/css/normalize.min.css">
+      <link rel="stylesheet" href="vendor/css/font-awesome.min.css">
+    {{/isProduction}}
+
+    <!-- Site styles -->
     <link rel="stylesheet" href="styles.min.css">
   </head>
   <body>
