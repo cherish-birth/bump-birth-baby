@@ -12,13 +12,13 @@
   $btn-hover-color: lighten($text-secondary, 10%);
 
   display: block;
-  padding: 7px 10px;
+  padding: 10px 10px;
   background: $btn-color;
   color: $text-inverse;
   text-decoration: none;
   text-align: center;
   border: 1px solid darken($btn-color, 7%);
-  border-radius: 5px;
+  border-radius: 10px;
 
   transition: background $transition-fast, border-color $transition-fast;
 
@@ -32,10 +32,7 @@
 /* Media objects */
 .media {
   display: flex;
-  align-items: flex-start;
-  &.media-middle {
-    align-items: center;
-  }
+  align-items: center;
 
   .media-figure {
     margin: 0 0.5em 0 0;
