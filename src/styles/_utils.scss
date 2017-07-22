@@ -43,3 +43,20 @@
     flex: 1;
   }
 }
+
+
+/* Logo groups */
+div.logos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  > figcaption {
+    width: 100%;
+  }
+
+  figure {
+    margin: 10px;
+    max-width: 180px;
+  }
+}
