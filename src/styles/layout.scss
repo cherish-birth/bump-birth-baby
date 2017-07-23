@@ -4,14 +4,14 @@
   display: flex;
   width: $screen-max;
   max-width: 100%;
-  margin: $space-normal;
+  margin: $space-md;
 
   .first-container {
     flex-shrink: 0;
   }
   .second-container {
     text-align: center;
-    padding: $space-normal * 1.5;
+    padding: $space-lg;
 
     figure.flowers {
       margin: 1em auto;
@@ -25,7 +25,7 @@
 
     .first-container {
       border-bottom: 2px dashed;
-      padding-bottom: $space-normal;
+      padding-bottom: $space-md;
     }
   }
 
@@ -33,11 +33,11 @@
   @media (min-width: $screen-wide) {
     .first-container {
       border-right: 2px dashed;
-      padding-right: $space-normal;
+      padding: $space-xl $space-md $space-xl 0;
       width: 260px;
     }
     .second-container {
-      padding: $space-normal * 2;
+      padding: $space-lg $space-xl;
       padding-right: 0;
     }
   }

@@ -12,7 +12,7 @@
   $btn-hover-color: lighten($text-secondary, 10%);
 
   display: block;
-  padding: 10px 10px;
+  padding: $space-sm;
   background: $btn-color;
   color: $text-inverse;
   text-decoration: none;
@@ -52,7 +52,7 @@ div.logos {
   justify-content: center;
 
   figure {
-    margin: 10px;
+    margin: $space-sm;
     max-width: 180px;
   }
 }
