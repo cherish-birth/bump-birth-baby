@@ -4,21 +4,25 @@
   box-sizing: border-box;
 }
 
-html, body {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  min-width: $screen-min;
-  min-height: 100%;
+html {
+  height: 100%;
 }
 
 body {
+  width: 100%;
+  min-width: $screen-min;
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+
   background: $background;
   color: $text-primary;
+
+  font-family: $font-family;
+
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: $font-family;
 }
 
 h1, h2, h3, h4, h5, h6 {
