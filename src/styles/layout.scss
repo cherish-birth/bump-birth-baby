@@ -6,34 +6,39 @@
   max-width: 100%;
   margin: $space-md;
 
-  .first-container {
+  .details-container {
     flex-shrink: 0;
   }
-  .second-container {
+  .main-container {
     text-align: center;
+  }
+
+  figure.flowers {
+    margin: 1em auto;
+    max-width: 258px;
   }
 
   /* Narrow screen - stacked */
   @media (max-width: $screen-wide - 1) {
     flex-direction: column;
 
-    .first-container {
+    .details-container {
       border-bottom: 2px dashed;
       padding-bottom: $space-lg;
     }
-    .second-container {
+    .main-container {
       padding: $space-lg;
     }
   }
 
   /* Wide screen - side by side */
   @media (min-width: $screen-wide) {
-    .first-container {
+    .details-container {
       border-right: 2px dashed;
       padding-right: $space-md;
       width: 260px;
     }
-    .second-container {
+    .main-container {
       padding-left: $space-xl;
     }
   }

@@ -1,32 +1,30 @@
 @import "variables";
 
-figure.logo {
-  max-width: 238px;
-  margin: 0 auto $space-lg;
+.details-container {
+  figure.logo {
+    max-width: 238px;
+    margin: 0 auto $space-lg;
 
-  figcaption {
-    color: $text-secondary;
-    text-transform: uppercase;
-    text-align: center;
-    font-size: 0.8em;
+    figcaption {
+      color: $text-secondary;
+      text-transform: uppercase;
+      text-align: center;
+      font-size: 0.8em;
+    }
   }
-}
 
-figure.flowers {
-  margin: 1em auto;
-  max-width: 258px;
-}
 
-.details {
-  max-width: 190px;
-  margin: 0 auto;
+  .details {
+    max-width: 190px;
+    margin: 0 auto;
 
-  > * {
-    margin: 1em 0;
+    > * {
+      margin: 1em 0;
+    }
   }
-}
 
-.actions {
-  margin: $space-lg auto 0;
-  max-width: 258px;
+  .actions {
+    margin: $space-lg auto 0;
+    max-width: 258px;
+  }
 }
