@@ -11,7 +11,6 @@
   }
   .second-container {
     text-align: center;
-    padding: $space-lg;
   }
 
   /* Narrow screen - stacked */
@@ -20,7 +19,10 @@
 
     .first-container {
       border-bottom: 2px dashed;
-      padding-bottom: $space-md;
+      padding-bottom: $space-lg;
+    }
+    .second-container {
+      padding: $space-lg;
     }
   }
 
@@ -28,12 +30,11 @@
   @media (min-width: $screen-wide) {
     .first-container {
       border-right: 2px dashed;
-      padding: $space-xl $space-md $space-xl 0;
+      padding-right: $space-md;
       width: 260px;
     }
     .second-container {
-      padding: $space-lg $space-xl;
-      padding-right: 0;
+      padding-left: $space-xl;
     }
   }
 }
