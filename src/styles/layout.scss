@@ -12,6 +12,11 @@
   .second-container {
     text-align: center;
     padding: $space-normal * 1.5;
+
+    figure.flowers {
+      margin: 1em auto;
+      max-width: 258px;
+    }
   }
 
   /* Narrow screen - stacked */
