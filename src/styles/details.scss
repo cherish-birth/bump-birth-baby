@@ -1,8 +1,8 @@
 @import "variables";
 
 figure.logo {
-  max-width: $details-width;
-  margin: 0 auto;
+  max-width: 238px;
+  margin: 0 auto $space-lg;
 
   figcaption {
     color: $text-secondary;
@@ -12,16 +12,20 @@ figure.logo {
   }
 }
 
+figure.flowers {
+  margin: 1em auto;
+  max-width: 258px;
+}
+
 .details {
-  max-width: $details-width;
-  margin: 1.5em auto 0;
+  max-width: 190px;
+  margin: 0 auto;
 
   > * {
     margin: 1em 0;
   }
+}
 
-  figure.flowers {
-    margin-left: -$space-sm;
-    margin-right: -$space-sm;
-  }
+.actions {
+  margin-top: $space-lg;
 }
