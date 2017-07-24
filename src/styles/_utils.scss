@@ -48,11 +48,16 @@
 /* Logo groups */
 div.logos {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
 
   figure {
     margin: $space-sm;
     max-width: 180px;
+  }
+
+  @media(min-width: $screen-wide) {
+    flex-wrap: inherit;
   }
 }

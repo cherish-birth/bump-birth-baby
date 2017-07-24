@@ -21,6 +21,7 @@ body {
   font-family: $font-family;
 
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
@@ -41,4 +42,14 @@ p:first-child {
 
 img {
   max-width: 100%;
+}
+
+figure {
+  margin: 0;
+}
+figcaption {
+  color: $text-secondary;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 0.8em;
 }

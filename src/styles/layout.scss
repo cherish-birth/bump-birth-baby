@@ -43,3 +43,12 @@
     }
   }
 }
+
+footer {
+  width: $screen-max;
+  max-width: 100%;
+
+  figcaption {
+    margin: $space-md 0 0;
+  }
+}
