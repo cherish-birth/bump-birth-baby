@@ -54,10 +54,11 @@ div.logos {
 
   figure {
     margin: $space-sm;
+    width: 42%;
     max-width: 180px;
   }
 
-  @media(min-width: $screen-wide) {
+  @media (min-width: $screen-wide) {
     flex-wrap: inherit;
   }
 }
