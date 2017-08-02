@@ -25,6 +25,7 @@
   &:hover {
     background: $btn-hover-color;
     border-color: darken($btn-hover-color, 7%);
+    color: $text-inverse;
   }
 }
 
