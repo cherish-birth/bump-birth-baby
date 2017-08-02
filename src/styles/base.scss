@@ -40,6 +40,15 @@ p:first-child {
   margin-top: 0;
 }
 
+a {
+  color: $text-secondary;
+  transition: color $transition-fast;
+
+  &:hover {
+    color: lighten($text-secondary, 10%);
+  }
+}
+
 img {
   max-width: 100%;
 }
