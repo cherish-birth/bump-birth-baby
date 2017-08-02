@@ -16,7 +16,11 @@
   }
 
   .actions {
-    margin: $space-lg auto 0;
+    margin: $space-md auto 0;
     max-width: 258px;
+
+    a.btn {
+      margin-top: 5px;
+    }
   }
 }
