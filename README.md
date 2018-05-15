@@ -1,3 +1,3 @@
-# Bump, Birth and Baby 2017
+# Bump, Birth and Baby
 
-Website for the Bump, Birth and Baby 2017 event
+Website for the Bump, Birth and Baby events

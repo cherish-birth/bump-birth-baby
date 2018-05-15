@@ -1,8 +1,8 @@
 {
-  "name": "bump-birth-baby-2017",
+  "name": "bump-birth-baby",
   "version": "1.0.0",
-  "description": "Website for the Bump, Birth and Baby 2017 event",
-  "repository": "git@github.com:cherish-birth/bump-birth-baby-2017.git",
+  "description": "Website for the Bump, Birth and Baby events",
+  "repository": "git@github.com:cherish-birth/bump-birth-baby.git",
   "author": "Ben Booth <bkbooth@gmail.com>",
   "license": "MIT",
   "private": true,
