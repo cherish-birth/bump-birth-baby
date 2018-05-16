@@ -14,7 +14,7 @@
     "watch": "gulp watch",
     "serve": "gulp serve",
     "deploy": "gh-pages -d dist",
-    "predeploy": "npm run build && echo 'bumpbirthandbaby.com.au' > dist/CNAME"
+    "predeploy": "npm run build && echo bumpbirthandbaby.com.au > dist/CNAME"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",
