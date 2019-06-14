@@ -1,4 +1,4 @@
-@import "variables";
+@import 'variables';
 
 * {
   box-sizing: border-box;
@@ -26,7 +26,12 @@ body {
   align-items: center;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   color: $text-secondary;
 }
 

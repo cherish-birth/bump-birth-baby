@@ -5,10 +5,9 @@ $text-inverse: #f1f1f1;
 $text-secondary: #79204b;
 $text-tertiary: #e394bf;
 
-
 /* Fonts */
-$font-family: Corbel, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", "Bitstream Vera Sans", "Liberation Sans", Verdana, "Verdana Ref", sans-serif;
-
+$font-family: Corbel, 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans',
+  'Bitstream Vera Sans', 'Liberation Sans', Verdana, 'Verdana Ref', sans-serif;
 
 /* Sizes and spacing */
 $screen-min: 320px;
@@ -19,7 +18,6 @@ $space-md: 20px;
 $space-sm: $space-md / 2;
 $space-lg: $space-md * 1.5;
 $space-xl: $space-md * 2;
-
 
 /* Timings */
 $transition-fast: 0.3s;

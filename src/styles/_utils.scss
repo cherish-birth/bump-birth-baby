@@ -1,10 +1,15 @@
-@import "variables";
+@import 'variables';
 
 /* Utility classes */
-.text-primary { color: $text-primary; }
-.text-secondary { color: $text-secondary; }
-.text-tertiary { color: $text-tertiary; }
-
+.text-primary {
+  color: $text-primary;
+}
+.text-secondary {
+  color: $text-secondary;
+}
+.text-tertiary {
+  color: $text-tertiary;
+}
 
 /* Buttons */
 .btn {
@@ -29,7 +34,6 @@
   }
 }
 
-
 /* Media objects */
 .media {
   display: flex;
@@ -44,7 +48,6 @@
     flex: 1;
   }
 }
-
 
 /* Logo groups */
 div.logos {
