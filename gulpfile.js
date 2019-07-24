@@ -20,28 +20,12 @@ const paths = {
   copies: isProduction ? ['images'] : ['images', 'vendor'],
 }
 
-gulp.task('default', ['build'])
-gulp.task('build', ['build:styles', 'build:copies'], () => gulp.run('build:html'))
-gulp.task('clean', () => del(paths.dist))
-gulp.task('serve', () =>
-  gulp.src(paths.dist).pipe(
-    server({
-      host: process.env.HOST || '0.0.0.0',
-      port: Number(process.env.PORT) || 8000,
-      livereload: true,
-    })
-  )
-)
-gulp.task('watch', ['build'], () => {
-  gulp.watch(path.join(paths.src, '**', '*.scss'), ['build:styles'])
-  gulp.watch(path.join(paths.src, '**', '*.html'), ['build:html'])
-  gulp.watch(paths.copies.map(copy => path.join(paths.src, copy, '**')), ['build:copies'])
-})
-
 /**
- * STYLES
+ * BUILD STYLES
  */
-gulp.task('build:styles', ['clean:styles'], () =>
+const cleanStyles = () =>
+  del([path.join(paths.dist, '*.min.css'), path.join(paths.dist, '*.min.css.map')])
+const buildStyles = () =>
   pump([
     gulp.src(path.join(paths.src, 'styles', 'style.scss')),
     sourcemaps.init(),
@@ -51,15 +35,13 @@ gulp.task('build:styles', ['clean:styles'], () =>
     sourcemaps.write('.'),
     gulp.dest(paths.dist),
   ])
-)
-gulp.task('clean:styles', () =>
-  del([path.join(paths.dist, '*.min.css'), path.join(paths.dist, '*.min.css.map')])
-)
+const cleanAndBuildStyles = gulp.series(cleanStyles, buildStyles)
 
 /**
- * HTML
+ * BUILD HTML
  */
-gulp.task('build:html', ['clean:html'], () =>
+const cleanHtml = () => del(path.join(paths.dist, '*.html'))
+const buildHtml = () =>
   pump([
     gulp.src(path.join(paths.src, '*.html')),
     mustache({ isProduction }),
@@ -67,15 +49,38 @@ gulp.task('build:html', ['clean:html'], () =>
     htmlmin({ collapseWhitespace: true, removeComments: true }),
     gulp.dest(paths.dist),
   ])
-)
-gulp.task('clean:html', () => del(path.join(paths.dist, '*.html')))
+const cleanAndBuildHtml = gulp.series(cleanHtml, buildHtml)
 
 /**
- * COPIES
+ * BUILD COPIES
  */
-gulp.task('build:copies', ['clean:copies'], () => {
-  paths.copies.forEach(copy =>
-    pump([gulp.src(path.join(paths.src, copy, '**')), gulp.dest(path.join(paths.dist, copy))])
+const cleanCopies = () => del(paths.copies.map(copy => path.join(paths.dist, copy)))
+const buildCopies = () =>
+  Promise.all(
+    paths.copies.map(copy =>
+      pump([gulp.src(path.join(paths.src, copy, '**')), gulp.dest(path.join(paths.dist, copy))])
+    )
   )
-})
-gulp.task('clean:copies', () => del(paths.copies.map(copy => path.join(paths.dist, copy))))
+const cleanAndBuildCopies = gulp.series(cleanCopies, buildCopies)
+
+const clean = () => del(paths.dist)
+const build = gulp.series(clean, gulp.parallel(buildStyles, buildCopies), buildHtml)
+const watch = () => {
+  gulp.watch(path.join(paths.src, '**', '*.scss'), cleanAndBuildStyles)
+  gulp.watch(path.join(paths.src, '**', '*.html'), cleanAndBuildHtml)
+  gulp.watch(paths.copies.map(copy => path.join(paths.src, copy, '**')), cleanAndBuildCopies)
+}
+const serve = () =>
+  gulp.src(paths.dist).pipe(
+    server({
+      host: process.env.HOST || '0.0.0.0',
+      port: Number(process.env.PORT) || 8000,
+      livereload: true,
+    })
+  )
+
+exports.clean = clean
+exports.serve = serve
+exports.build = build
+exports.watch = watch
+exports.default = build
