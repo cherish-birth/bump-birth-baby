@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Website for the Bump, Birth and Baby events",
   "repository": "git@github.com:cherish-birth/bump-birth-baby.git",
-  "author": "Ben Booth <bkbooth@gmail.com>",
+  "author": "Ben Booth <bkbooth@gmail.com> (https://benbooth.dev)",
   "license": "MIT",
   "private": true,
   "scripts": {
@@ -36,7 +36,6 @@
     "pump": "^3.0.0"
   },
   "resolutions": {
-    "debug": "^2.6.9",
     "fresh": "^0.5.2",
     "lodash": "^4.17.13",
     "lodash.template": "^4.5.0",
@@ -46,9 +45,9 @@
     "open": "^6.0.0",
     "send": "^0.11.1",
     "serve-index": "^1.6.3",
-    "ws": "^3.3.1"
+    "socket.io": "^2.2.0"
   },
   "engines": {
-    "node": ">= 6"
+    "node": ">= 8"
   }
 }
